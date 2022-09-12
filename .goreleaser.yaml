@@ -1,0 +1,11 @@
+archives:
+  - format: binary
+    name_template: "{{ .Binary }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}"
+builds:
+  - hooks:
+      post:
+        - upx --best --lzma "{{ .Path }}"
+    goos:
+      - linux
+checksum:
+  name_template: "{{ .ProjectName }}-{{ .Version }}-checksums.txt"
