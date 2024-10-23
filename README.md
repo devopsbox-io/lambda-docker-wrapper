@@ -1,12 +1,12 @@
 # Lambda container image wrapper
 
-## How it works
+## How does it work?
 
 - Fetches SSM secure string parameters specified in env variables with `_SSM_PARAMETER_NAME` suffix
   (e.g. `DB_PASSWORD_SSM_PARAMETER_NAME`).
 - Executes any executable provided as the first argument passing all the other arguments as-is.
 
-## Why we built it?
+## Why have we built it?
 
 We wanted to run any executable in on-demand executed Lambdas. Our main use case is running SQL scripts in the same VPC
 as RDS instances are residing. However, there are two problems:
